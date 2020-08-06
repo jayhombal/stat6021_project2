@@ -471,7 +471,7 @@ We observed that the scatter plot of charges against age had three distinct rela
 plot(data$age, data$charges)
 ```
 
-We removed age from the model and performed transformation on the response variable, we did not see any violations of linear regression assumptions.
+Age was removed from the model and the and the response variable was transformed. When validating the assumptions through a box-cox plot, non-constant variation was still present thus not making it a good model for consideration
 
 ```{r}
 without.age <- lm(charges^.35 ~ + children + smoker + sex + region + bmi, data=data)
